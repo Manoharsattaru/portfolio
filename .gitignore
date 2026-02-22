@@ -1,0 +1,9 @@
+# Reference files (not needed in production)
+google-apps-script.js
+cv_text.txt
+CV_Sattaru*.docx
+
+# System
+.DS_Store
+Thumbs.db
+desktop.ini
