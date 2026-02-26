@@ -761,7 +761,7 @@ Key facts:
             if (available) {
                 addBotMessage(`Hello! 👋 I'm Manohar's AI assistant, powered by **${ollamaModel}** with a hybrid RAG engine. Ask me anything about his experience, skills, projects, or background!`);
             } else {
-                addBotMessage(`Hello! 👋 I'm Manohar's AI assistant. I use a hybrid RAG engine to answer questions about his experience, skills, projects, education, and more.\n\n_💡 Tip: Start Ollama locally for richer AI-generated answers!_`);
+                addBotMessage(`Hello! 👋 I'm Manohar's AI assistant. I use a hybrid RAG engine to answer questions about his experience, skills, projects, education, and more. How can I help you today?`);
             }
         });
     }

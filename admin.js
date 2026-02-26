@@ -5,15 +5,13 @@
 
 (() => {
     // ========== CONFIGURATION ==========
-    // *** PASTE YOUR GOOGLE CLIENT ID HERE ***
-    // Get it from: https://console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client IDs
-    const GOOGLE_CLIENT_ID = '809913267973-sao47300qlpv3usb2gbt41vshlpkvjkj.apps.googleusercontent.com';
-
     // *** PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE (same one from index.js) ***
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyXNFSutaJXPgwuZrFXj3BC9ksdG_CQ7g8u2Ozkvzbs5p0Ay9STjBAMmLwjrEWpYkEE/exec';
 
-    // Authorized admin email
-    const ADMIN_EMAIL = 'Manoharansiddarth@gmail.com';
+    // Authorized admin credentials
+    const ADMIN_USER = 'Manohar07';
+    const ADMIN_PASS = 'Shanaya16';
+    const ADMIN_EMAIL = 'Manoharansiddarth@gmail.com'; // used for fetching via apps script token
 
     // ========== STATE ==========
     let allContacts = [];
@@ -23,7 +21,10 @@
     const loginScreen = document.getElementById('loginScreen');
     const dashboard = document.getElementById('dashboard');
     const loginError = document.getElementById('loginError');
-    const googleSignInBtn = document.getElementById('googleSignInBtn');
+    const adminLoginForm = document.getElementById('adminLoginForm');
+    const adminUsernameInput = document.getElementById('adminUsername');
+    const adminPasswordInput = document.getElementById('adminPassword');
+
     const logoutBtn = document.getElementById('logoutBtn');
     const userAvatar = document.getElementById('userAvatar');
     const userName = document.getElementById('userName');
@@ -41,21 +42,15 @@
     const contactsBody = document.getElementById('contactsBody');
     const emptyState = document.getElementById('emptyState');
 
-    // ========== GOOGLE SIGN-IN ==========
+    // ========== LOCAL SIGN-IN ==========
 
-    // Wait for Google Identity Services library to load
-    function initGoogleSignIn() {
-        if (typeof google === 'undefined' || !google.accounts) {
-            setTimeout(initGoogleSignIn, 200);
-            return;
-        }
-
+    function initLocalSignIn() {
         // Check for existing session
         const savedUser = sessionStorage.getItem('adminUser');
         if (savedUser) {
             try {
                 currentUser = JSON.parse(savedUser);
-                if (currentUser.email.toLowerCase() === ADMIN_EMAIL.toLowerCase()) {
+                if (currentUser.username === ADMIN_USER) {
                     showDashboard();
                     return;
                 }
@@ -64,92 +59,29 @@
             }
         }
 
-        // Initialize Google Sign-In
-        google.accounts.id.initialize({
-            client_id: GOOGLE_CLIENT_ID,
-            callback: handleCredentialResponse,
-            auto_select: false,
-        });
+        // Handle login form submission
+        if (adminLoginForm) {
+            adminLoginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                loginError.textContent = '';
 
-        // Custom button click handler
-        googleSignInBtn.addEventListener('click', () => {
-            loginError.textContent = '';
-            google.accounts.id.prompt((notification) => {
-                if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-                    // Fallback: render the Google button in a hidden div and trigger it
-                    const tempDiv = document.createElement('div');
-                    tempDiv.style.position = 'fixed';
-                    tempDiv.style.top = '50%';
-                    tempDiv.style.left = '50%';
-                    tempDiv.style.transform = 'translate(-50%, -50%)';
-                    tempDiv.style.zIndex = '99999';
-                    tempDiv.style.background = 'rgba(17, 24, 39, 0.95)';
-                    tempDiv.style.padding = '2rem';
-                    tempDiv.style.borderRadius = '1rem';
-                    tempDiv.style.border = '1px solid rgba(255,255,255,0.1)';
-                    tempDiv.id = 'googlePopupFallback';
+                const enteredUser = adminUsernameInput.value.trim();
+                const enteredPass = adminPasswordInput.value.trim();
 
-                    const closeBtn = document.createElement('button');
-                    closeBtn.textContent = '✕ Close';
-                    closeBtn.style.cssText = 'display:block;margin:1rem auto 0;background:none;border:1px solid rgba(255,255,255,0.2);color:#94a3b8;padding:8px 16px;border-radius:20px;cursor:pointer;font-size:0.8rem;';
-                    closeBtn.onclick = () => tempDiv.remove();
+                if (enteredUser === ADMIN_USER && enteredPass === ADMIN_PASS) {
+                    // Success — save user info
+                    currentUser = {
+                        name: 'Manohar',
+                        username: ADMIN_USER,
+                        picture: 'profile.jpg' // Use the same profile picture
+                    };
 
-                    document.body.appendChild(tempDiv);
-
-                    google.accounts.id.renderButton(tempDiv, {
-                        theme: 'filled_blue',
-                        size: 'large',
-                        width: 300,
-                        text: 'signin_with',
-                    });
-
-                    tempDiv.appendChild(closeBtn);
+                    sessionStorage.setItem('adminUser', JSON.stringify(currentUser));
+                    showDashboard();
+                } else {
+                    loginError.textContent = 'Invalid username or password.';
                 }
             });
-        });
-    }
-
-    function handleCredentialResponse(response) {
-        // Remove fallback popup if present
-        const popup = document.getElementById('googlePopupFallback');
-        if (popup) popup.remove();
-
-        // Decode JWT token
-        const payload = decodeJWT(response.credential);
-
-        if (!payload) {
-            loginError.textContent = 'Failed to decode credentials. Please try again.';
-            return;
-        }
-
-        if (payload.email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-            loginError.textContent = `Access denied. ${payload.email} is not authorized.`;
-            return;
-        }
-
-        // Success — save user info
-        currentUser = {
-            name: payload.name,
-            email: payload.email,
-            picture: payload.picture,
-        };
-
-        sessionStorage.setItem('adminUser', JSON.stringify(currentUser));
-        showDashboard();
-    }
-
-    function decodeJWT(token) {
-        try {
-            const base64Url = token.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(
-                atob(base64).split('').map(c =>
-                    '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
-                ).join('')
-            );
-            return JSON.parse(jsonPayload);
-        } catch (e) {
-            return null;
         }
     }
 
@@ -314,5 +246,5 @@
     }
 
     // ========== INIT ==========
-    initGoogleSignIn();
+    initLocalSignIn();
 })();
