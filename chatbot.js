@@ -348,8 +348,16 @@ const ChatBot = (() => {
             response: () => `In the "Reports" section of this website, you can view and download Manohar's academic and professional work, including:\n\n• **M.Tech Dissertation:** Urban Planning & Infrastructure (GMDA)\n• **PGP-DSBA Capstone/Projects:** Credit Risk Modeling, Finance & Risk Analytics, Market Basket Analysis\n• **Professional Reports:** Aarush Group rural development, QCI Village Certification\n• **His Latest CV**\n\nYou can preview PDFs directly on the site or download them via a quick form!`
         },
         {
-            keywords: ["hi", "hello", "hey", "good morning", "good evening", "good afternoon"],
+            keywords: ["hi", "hello", "hey", "good morning", "good evening", "good afternoon", "greetings"],
             response: () => `Hello! 👋 I'm Manohar's AI assistant. I can help you learn about his experience, skills, projects, education, certifications, and research reports. What would you like to know?`
+        },
+        {
+            keywords: ["how are you", "how are u", "how r you", "how r u", "how's it going", "what's up", "whats up"],
+            response: () => `I'm doing great, thanks for asking! 😊 I'm here and ready to help you explore Manohar's portfolio. What would you like to know about his background or skills?`
+        },
+        {
+            keywords: ["who made you", "who created you", "who built you", "what are you"],
+            response: () => `I am a custom AI assistant engineered by **Sattaru Manohar** using a hybrid RAG architecture (Keyword Lookup → Fuzzy FAQ → TF-IDF → LLM) to help you navigate his portfolio!`
         },
         {
             keywords: ["thanks", "thank you", "great", "awesome", "cool", "nice"],
@@ -358,6 +366,14 @@ const ChatBot = (() => {
         {
             keywords: ["bye", "goodbye", "see you", "later"],
             response: () => `Goodbye! 👋 Thanks for visiting Manohar's portfolio. Feel free to come back anytime or reach out at ${CV_DATA.email}!`
+        },
+        {
+            keywords: ["open to work", "open for work", "job change", "looking for job", "opportunities", "hiring", "hire you", "available", "job"],
+            response: () => `Yes, Manohar is currently open to new opportunities! 🚀\n\nHe is actively seeking roles in **Digital Transformation, AI/ML Solutions, and Strategy**.\n\nHe is open to **Remote, Hybrid, or On-site** collaboration, with a location preference for **Hyderabad**.\n\n<a href="#contact" onclick="document.getElementById('chatPanel').classList.remove('open')">Get in Touch ↓</a>`
+        },
+        {
+            keywords: ["background", "summary", "profile", "about", "overview"],
+            response: () => CV_DATA.summary + `\n\n<a href="#experience" onclick="document.getElementById('chatPanel').classList.remove('open')">See Work Experience ↓</a>`
         }
     ];
 
@@ -380,12 +396,12 @@ const ChatBot = (() => {
     // ============================
 
     const FAQ_PAIRS = [
-        { q: "what is your total experience", a: () => INTENTS.find(i => i.keywords.includes("experience")).response() },
-        { q: "what are your technical skills", a: () => INTENTS.find(i => i.keywords.includes("skill")).response() },
+        { q: "what is your total experience", a: () => INTENTS.find(i => i.keywords.includes("experience")).response() + `\n\n<a href="#experience" onclick="document.getElementById('chatPanel').classList.remove('open')">Jump to Experience Section ↓</a>` },
+        { q: "what are your technical skills", a: () => INTENTS.find(i => i.keywords.includes("skill")).response() + `\n\n<a href="#about" onclick="document.getElementById('chatPanel').classList.remove('open')">Jump to Skills Section ↓</a>` },
         { q: "what is your current role", a: () => INTENTS.find(i => i.keywords.includes("current")).response() },
-        { q: "tell me about your education", a: () => INTENTS.find(i => i.keywords.includes("education")).response() },
-        { q: "what projects have you worked on", a: () => INTENTS.find(i => i.keywords.includes("project")).response() },
-        { q: "how can i contact you", a: () => INTENTS.find(i => i.keywords.includes("contact")).response() },
+        { q: "tell me about your education", a: () => INTENTS.find(i => i.keywords.includes("education")).response() + `\n\n<a href="#education" onclick="document.getElementById('chatPanel').classList.remove('open')">Jump to Education Section ↓</a>` },
+        { q: "what projects have you worked on", a: () => INTENTS.find(i => i.keywords.includes("project")).response() + `\n\n<a href="#projects" onclick="document.getElementById('chatPanel').classList.remove('open')">Jump to Projects Section ↓</a>` },
+        { q: "how can i contact you", a: () => INTENTS.find(i => i.keywords.includes("contact")).response() + `\n\n<a href="#contact" onclick="document.getElementById('chatPanel').classList.remove('open')">Jump to Contact Section ↓</a>` },
         { q: "what certifications do you have", a: () => INTENTS.find(i => i.keywords.includes("certification")).response() },
         { q: "tell me about your work at kpmg", a: () => INTENTS.find(i => i.keywords.includes("kpmg")).response() },
         { q: "tell me about your chatbot project", a: () => INTENTS.find(i => i.keywords.includes("chatbot")).response() },
@@ -393,13 +409,17 @@ const ChatBot = (() => {
         { q: "tell me about the api migration project", a: () => INTENTS.find(i => i.keywords.includes("api")).response() },
         { q: "describe the gem fraud detection work", a: () => INTENTS.find(i => i.keywords.includes("fraud")).response() },
         { q: "what is your github profile", a: () => INTENTS.find(i => i.keywords.includes("github")).response() },
-        { q: "tell me about your data science background", a: () => `Manohar completed a **PGP in Data Science & Business Analytics** from **UT Austin McCombs** (2023-2024), with a capstone on predictive analytics for credit risk management.\n\nHis data skills include: ${CV_DATA.skills.dataAnalytics.join(', ')}.` },
-        { q: "what programming languages do you know", a: () => `Manohar is proficient in **Python** and **SQL**, with frameworks like **Flask** and **Gradio**. His full tech stack: ${CV_DATA.skills.technical.join(', ')}.` },
+        { q: "tell me about your data science background", a: () => `Manohar completed a **PGP in Data Science & Business Analytics** from **UT Austin McCombs** (2023-2024), with a capstone on predictive analytics for credit risk management.\n\nHis data skills include: ${CV_DATA.skills.dataAnalytics.join(', ')}.\n\n<a href="#education" onclick="document.getElementById('chatPanel').classList.remove('open')">See Education Section ↓</a>` },
+        { q: "what programming languages do you know", a: () => `Manohar is proficient in **Python** and **SQL**, with frameworks like **Flask** and **Gradio**. His full tech stack: ${CV_DATA.skills.technical.join(', ')}.\n\n<a href="#about" onclick="document.getElementById('chatPanel').classList.remove('open')">See Skills Section ↓</a>` },
         { q: "what is your summary or profile", a: () => CV_DATA.summary },
+        { q: "what is your background", a: () => CV_DATA.summary },
         { q: "where are you currently working", a: () => INTENTS.find(i => i.keywords.includes("current")).response() },
         { q: "what do you specialize in", a: () => `Manohar specializes in **Digital Transformation**, **AI/ML solutions** (especially Gen AI chatbots with RAG architecture), **Public Sector Advisory**, and **Data Analytics**. He excels at translating strategic policy into production-ready digital solutions.` },
         { q: "what is your expertise", a: () => `Manohar's areas of expertise include **Digital Government Advisory**, **NLP/Gen AI chatbot development**, **data-driven policy research**, **public financial management**, and **stakeholder management** across ministries and development agencies.` },
-        { q: "can you download or share your resume", a: () => `You can learn everything about Manohar's profile right here! For a formal resume, please reach out at **${CV_DATA.email}**.\n\nOr check his profiles:\n- [LinkedIn](${CV_DATA.linkedin})\n- [E-Portfolio](${CV_DATA.eportfolio})\n- [Credly Badges](${CV_DATA.credly})` }
+        { q: "can you download or share your resume", a: () => `You can learn everything about Manohar's profile right here! For a formal resume, please reach out at **${CV_DATA.email}**.\n\nOr check his profiles:\n- [LinkedIn](${CV_DATA.linkedin})\n- [E-Portfolio](${CV_DATA.eportfolio})\n- [Credly Badges](${CV_DATA.credly})\n\n<a href="#documents" onclick="document.getElementById('chatPanel').classList.remove('open')">Download CV from Documents Section ↓</a>` },
+        { q: "who are you", a: () => INTENTS.find(i => i.keywords.includes("what are you")).response() },
+        { q: "what can you do", a: () => `I can answer questions about Manohar's skills, experience, projects, and education. Try asking me "What are your skills?" or "Tell me about your projects!"` },
+        { q: "are you a human", a: () => `I'm an AI assistant built by Manohar using a hybrid RAG architecture. I don't take coffee breaks, but I love answering questions about his portfolio!` }
     ];
 
     // Bigram-based fuzzy similarity (inspired by Bharatkosh POC SequenceMatcher)
@@ -430,7 +450,7 @@ const ChatBot = (() => {
         return (2.0 * intersection) / (b1.size + b2.size);
     }
 
-    function fuzzyFAQMatch(query, threshold = 0.55) {
+    function fuzzyFAQMatch(query, threshold = 0.45) {
         let bestMatch = null;
         let bestScore = 0;
 
@@ -568,7 +588,7 @@ const ChatBot = (() => {
         if (results.length === 0) return null;
         const context = results.map(r => r.chunk.text).join('\n\n');
         const topics = [...new Set(results.map(r => r.chunk.topic))];
-        return `Based on Manohar's profile (${topics.join(', ')}):\n\n${context.split('. ').slice(0, 6).join('. ')}.`;
+        return `Based on Manohar's profile (${topics.join(', ')}), here is what I found:\n\n${context.split('. ').slice(0, 6).join('. ')}.`;
     }
 
 
@@ -703,9 +723,9 @@ Key facts:
             }
         }
 
-        // Final fallback
+        // Final fallback (Smart Deep Link Navigator)
         return {
-            answer: `I'm not sure I have specific information about that. Here are some things I can help you with:\n\n• **Experience** — Work history and roles\n• **Skills** — Technical, analytics, and consulting skills\n• **Projects** — Key projects and achievements\n• **Education** — Academic background\n• **Certifications** — Professional certifications\n• **Contact** — How to reach Manohar\n\nTry asking about any of these topics!`,
+            answer: `I'm not exactly sure, but I can help you navigate! Click a section below to jump right to it:\n\n<p style="margin: 6px 0;">• <a href="#experience" onclick="document.getElementById('chatPanel').classList.remove('open')" style="font-weight: 500;">Work Experience</a></p><p style="margin: 6px 0;">• <a href="#projects" onclick="document.getElementById('chatPanel').classList.remove('open')" style="font-weight: 500;">Key Projects</a></p><p style="margin: 6px 0;">• <a href="#education" onclick="document.getElementById('chatPanel').classList.remove('open')" style="font-weight: 500;">Education</a></p><p style="margin: 6px 0;">• <a href="#certifications" onclick="document.getElementById('chatPanel').classList.remove('open')" style="font-weight: 500;">Certifications</a></p><p style="margin: 6px 0;">• <a href="#contact" onclick="document.getElementById('chatPanel').classList.remove('open')" style="font-weight: 500;">Contact Me</a></p>`,
             source: 'fallback',
             confidence: 'low'
         };
@@ -752,6 +772,19 @@ Key facts:
                 sendSuggestion(btn.getAttribute('data-query'));
             });
         });
+
+        // 5-second recurring tooltip logic
+        setTimeout(() => {
+            setInterval(() => {
+                const tooltip = document.querySelector('.chatbot-tooltip');
+                if (tooltip && !chatOpen) {
+                    tooltip.classList.add('show-tooltip');
+                    setTimeout(() => {
+                        tooltip.classList.remove('show-tooltip');
+                    }, 3500); // Show it for 3.5 seconds
+                }
+            }, 8500); // Trigger every 8.5 seconds (effectively 5 seconds hidden)
+        }, 1000);
 
         addInitialMessage();
     }
