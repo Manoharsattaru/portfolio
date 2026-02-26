@@ -14,6 +14,7 @@
 
 <body>
 
+
   <!-- ========== NAVBAR ========== -->
   <nav class="navbar" id="navbar">
     <div class="container">
@@ -24,7 +25,10 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#documents">Reports</a></li>
         <li><a href="#certifications">Certifications</a></li>
+        <li><a href="data/cv/CV_Sattaru Manohar26022026.pdf" download
+            style="color: var(--text-accent); font-weight: 600;">Download CV</a></li>
         <li><a href="#contact" class="btn btn-primary" style="padding:0.5rem 1.25rem;">Contact</a></li>
       </ul>
       <div class="hamburger" id="hamburger">
@@ -35,53 +39,124 @@
     </div>
   </nav>
 
+  <!-- Chatbot Window -->
+  <div id="chatPanel" class="chat-panel">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">SM</div>
+        <div>
+          <div class="chat-header-name">Manohar's AI Assistant</div>
+          <div class="chat-header-status" id="chatStatus">
+            <span class="status-dot"></span> Hybrid RAG Engine
+          </div>
+        </div>
+      </div>
+      <div class="chat-header-actions" style="display: flex; gap: 8px; align-items: center;">
+        <button id="chatRefreshBtn" class="chat-close-btn" aria-label="Refresh Chat" title="Refresh Chat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 2v6h-6" />
+            <path d="M3 12a9 9 0 1 0 2.13-5.83L2 9" />
+          </svg>
+        </button>
+        <button id="chatCloseBtn" class="chat-close-btn" aria-label="Close Chat" title="Close Chat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <!-- Chat messages will be loaded here -->
+    </div>
+    <div class="chat-input-area">
+      <div class="chat-suggestions" id="chatSuggestions">
+        <button class="chat-suggestion-btn" data-query="What is your experience?">💼 Experience</button>
+        <button class="chat-suggestion-btn" data-query="What are your skills?">⚡ Skills</button>
+        <button class="chat-suggestion-btn" data-query="Tell me about your projects">🚀 Projects</button>
+        <button class="chat-suggestion-btn" data-query="How can I contact you?">📬 Contact</button>
+      </div>
+      <form class="chat-input-form" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Ask about Manohar's profile..." autocomplete="off">
+        <button type="submit" id="chatSendBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="chat-disclaimer">Hybrid RAG: Keyword Lookup → Fuzzy FAQ → TF-IDF → Ollama LLM</div>
+  </div>
+
+  <!-- Chatbot Floating Button -->
+  <button id="chatFab" class="chat-fab" aria-label="Open Chat">
+    <div class="chat-fab-pulse"></div>
+    <span class="chatbot-tooltip">Hey there! I am Manohar's AI assistant</span>
+    <div class="chat-fab-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+      </svg>
+    </div>
+    <div class="chat-fab-close" style="display:none">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </div>
+  </button>
+
   <!-- ========== HERO ========== -->
   <section id="hero">
     <div class="hero-bg">
       <div class="hero-grid"></div>
     </div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <p class="hero-greeting">👋 Hello, I'm</p>
-          <h1 class="hero-name">
-            Sattaru <span class="gradient-text">Manohar</span>
-          </h1>
-          <p class="hero-tagline">
-            Senior Technology Consultant at KPMG · <span class="typed-text" id="typedText"></span>
-          </p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M9 5l7 7-7 7" />
-              </svg>
-              View My Work
-            </a>
-            <a href="#contact" class="btn btn-outline">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              Get in Touch
-            </a>
-            <a href="https://github.com/Manoharsattaru" target="_blank" rel="noopener" class="btn btn-outline">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-              </svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <div class="profile-pic-wrapper">
-            <div class="profile-pic-glow"></div>
-            <div class="profile-pic-border">
-              <img src="profile.jpg" alt="Sattaru Manohar - Profile Photo">
-            </div>
+    <div class="hero-content hero-content-centered">
+
+      <!-- Profile + Bio Centered -->
+      <div class="hero-image">
+        <div class="profile-pic-wrapper" style="margin: 0 auto;">
+          <div class="profile-pic-glow"></div>
+          <div class="profile-pic-border">
+            <img src="profile.jpg" alt="Sattaru Manohar - Profile Photo">
           </div>
         </div>
       </div>
+
+      <div class="hero-text text-center">
+        <p class="hero-greeting">👋 Hello, I'm</p>
+        <h1 class="hero-name">
+          Sattaru <span class="gradient-text">Manohar</span>
+        </h1>
+        <p class="hero-tagline">
+          Senior Technology Consultant at KPMG · <span class="typed-text" id="typedText"></span>
+        </p>
+        <div class="hero-cta-row justify-center">
+          <a href="#projects" class="btn btn-primary">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7" />
+            </svg>
+            View My Work
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            Get in Touch
+          </a>
+
+          <a href="data/cv/CV_Sattaru Manohar26022026.pdf" download class="btn btn-outline">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -91,41 +166,83 @@
       <h2 class="section-title reveal"><span class="gradient-text">About Me</span></h2>
       <p class="section-subtitle reveal">Driving digital innovation at the intersection of technology and governance</p>
       <div class="about-content">
+        
+        <!-- Right Panel (Floated) -->
+        <div class="about-right-panel">
+          <div class="stats-grid reveal">
+            <div class="stat-card">
+              <div class="stat-number" data-target="6">0</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="7">0</div>
+              <div class="stat-label">Organizations</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="70">0</div>
+              <div class="stat-label">Team Size Led</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="170">0</div>
+              <div class="stat-label">APIs Migrated</div>
+            </div>
+          </div>
+
+          <div class="about-opportunity reveal" style="margin-top: var(--space-xl);">
+            <div class="opportunity-card">
+              <div class="opportunity-card-header">
+                <span class="pulse-dot"></span>
+                <span class="opportunity-status">Open for Opportunities | Available May 2026</span>
+              </div>
+              <p class="opportunity-card-body">
+                I am seeking to drive impact within <strong>Global Capability Centers (GCCs)</strong>, Innovation Hubs,
+                High-growth Startups, and Strategy teams, with a location preference for <strong>Hyderabad</strong>.
+                I am available for high-stakes <strong>Digital Transformation Projects</strong>, Strategy formulation, 
+                and the delivery of <strong>Technology AI Solutions</strong>. Let's collaborate on building 
+                production-ready AI/ML use cases and architecting the future of enterprise-scale digital roadmaps.
+              </p>
+              <a href="data/cv/CV_Sattaru Manohar26022026.pdf" download class="btn btn-primary opportunity-cv-btn">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Content (Flows around float) -->
         <div class="about-text reveal">
           <p>
-            Dynamic Technology Consultant with over <strong>6 years of experience</strong> leading large-scale digital
-            transformation and public sector advisory programs. I specialize in aligning AI-driven innovations and
-            advanced analytics with strategic governance goals to enhance systemic efficiency.
+            As a dynamic Technology Consultant with over <strong>6 years of experience</strong>, I thrive at the
+            intersection of complex strategic policy and production-ready digital solutions. My expertise lies in
+            aligning AI-driven innovations and advanced analytics with strategic governance goals to enhance systemic
+            efficiency across high-priority public sector programs. I specialize in leading large-scale digital
+            transformation initiatives, having spearheaded PMU operations and technical roadmaps that translate abstract
+            organizational needs into tangible, high-impact technology. By leveraging my hands-on technical acumen in
+            Python, SQL, and predictive modeling, alongside an evolving mastery of cloud-native architectures and MLOps,
+            I build the essential digital backbone required to modernize governance and public financial management
+            systems.
           </p>
           <p>
-            From engineering production-ready NLP chatbots achieving 95% accuracy to architecting API transition
-            frameworks for 170+ integrations — I thrive at the intersection of deep technical execution and strategic
-            consulting. My work spans across ministries, development agencies, and global consulting firms, delivering
-            tangible impact in public financial management, fraud detection, and data-driven policy.
+            My work is defined by the successful execution of deep technical challenges within complex stakeholder
+            environments. I have engineered production-ready, NLP-based assistants utilizing RAG hybrid lookup-LLM
+            architectures such as the Bharatkosh AI assistant to achieve <strong>90% accuracy</strong> in rule
+            extraction. Beyond AI, I have architected data transition frameworks to migrate over
+            <strong>170+ SFTP/XML-based integrations</strong> to RESTful JSON APIs, enabling real-time interoperability
+            between the RBI, major banks, and external payment gateways. Whether I am leading a
+            <strong>70-member consulting team</strong> for the Ministry of Home Affairs or developing privacy-focused,
+            offline-capable, hybrid and cloud AI frameworks, my focus remains on driving operational transparency
+            through evidence-based research and process standardization.
           </p>
           <p>
-            I'm passionate about leveraging emerging tech — Gen AI, predictive analytics, and platform engineering — to
-            solve real-world problems at scale.
+            I am passionate about leveraging emerging tech in <strong>Gen AI</strong>, predictive analytics, and
+            developing production-ready AI/ML use cases to solve real-world problems at scale.
           </p>
         </div>
-        <div class="stats-grid reveal">
-          <div class="stat-card">
-            <div class="stat-number" data-target="6">0</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-target="7">0</div>
-            <div class="stat-label">Organizations</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-target="70">0</div>
-            <div class="stat-label">Team Size Led</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-target="170">0</div>
-            <div class="stat-label">APIs Architected</div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -146,7 +263,7 @@
             <div class="timeline-role">Senior Consultant — Digital Government Advisory (CGA, MoF)</div>
             <ul class="timeline-highlights">
               <li>Engineered NLP-based Internal Audit chatbot with hybrid lookup-LLM architecture using Flask, spaCy,
-                and Ollama — achieving 100% accuracy</li>
+                and Ollama — achieving 90% accuracy</li>
               <li>Prepared POCs and documentation for AI/ML chatbots, fraud analytics, and OCR implementations in PFMS
                 modules — Bharatkosh and E-Bill</li>
               <li>Architected transition of 170+ SFTP/XML integrations to RESTful JSON APIs for RBI, banks, and payment
@@ -321,7 +438,7 @@
 
         <div class="skill-category reveal">
           <div class="skill-category-icon">🏛️</div>
-          <h3>Consulting & Domain</h3>
+          <h3>Strategy & Consulting</h3>
           <div class="skill-tags">
             <span class="skill-tag">Digital Transformation</span>
             <span class="skill-tag">Project Management</span>
@@ -453,7 +570,7 @@
           <div class="project-title">NLP Internal Audit Chatbot</div>
           <div class="project-org">KPMG — Ministry of Finance (CGA)</div>
           <div class="project-desc">Engineered a production-ready NLP-based Internal Audit assistant with hybrid
-            lookup-LLM architecture using Flask, spaCy, and Ollama. Achieved 100% accuracy with REST API and embeddable
+            lookup-LLM architecture using Flask, spaCy, and Ollama. Achieved 90% accuracy with REST API and embeddable
             widget support for offline document Q&A.</div>
           <div class="project-tags">
             <span>Flask</span>
@@ -535,6 +652,312 @@
             <span>IMF PFM</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REPORTS ========== -->
+  <section id="documents">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="gradient-text">Reports</span></h2>
+      <p class="section-subtitle reveal">Deep-dive into my academic research, project reports, and professional work</p>
+
+      <div class="doc-filters reveal">
+        <button class="doc-filter-btn active" data-filter="all">All</button>
+        <button class="doc-filter-btn" data-filter="pgp-dsba">PGP-DSBA</button>
+        <button class="doc-filter-btn" data-filter="mtech-udm">M.Tech UDM</button>
+        <button class="doc-filter-btn" data-filter="aarush-group">Aarush Group</button>
+        <button class="doc-filter-btn" data-filter="qci">QCI</button>
+      </div>
+
+      <div class="doc-grid" id="docGrid">
+
+        <!-- Aarush Group -->
+        <div class="doc-card reveal" data-category="aarush-group">
+          <div class="doc-card-header">
+            <span class="doc-type-icon">📄</span>
+          </div>
+          <div class="doc-card-title">Rural Development Project v7</div>
+          <div class="doc-card-desc">Comprehensive blueprint for cluster village development integrating IT, healthcare,
+            and solar energy sectors with the Government of Andhra Pradesh.</div>
+          <div class="doc-card-actions">
+            <button class="doc-btn doc-btn-preview"
+              onclick="openPdfModal('data/aarush-group/Rural development project v7.pdf')">👁 Preview</button>
+            <button class="doc-btn doc-btn-download"
+              onclick="openLeadGenModal('data/aarush-group/Rural development project v7.pdf')">⬇
+              Download</button>
+          </div>
+        </div>
+
+        <div class="doc-card reveal" data-category="aarush-group">
+          <div class="doc-card-header">
+            <span class="doc-type-icon">📄</span>
+          </div>
+          <div class="doc-card-title">TRISHA Visit Report</div>
+          <div class="doc-card-desc">Documentation of the TRISHA initiative site visit — a social impact assessment for
+            rural community development and welfare.</div>
+          <div class="doc-card-actions">
+            <button class="doc-btn doc-btn-preview" onclick="openPdfModal('data/aarush-group/TRISHA Visit.pdf')">👁
+              Preview</button>
+            <button class="doc-btn doc-btn-download" onclick="openLeadGenModal('data/aarush-group/TRISHA Visit.pdf')">⬇
+              Download</button>
+          </div>
+        </div>
+
+        <!-- M.Tech UDM -->
+        <div class="doc-card reveal" data-category="mtech-udm">
+          <div class="doc-card-header">
+            <span class="doc-type-icon">📄</span>
+          </div>
+          <div class="doc-card-title">UDM Major Project Dissertation</div>
+          <div class="doc-card-desc">Full M.Tech dissertation on urban development management — deep research into
+            sustainable city planning frameworks and policy recommendations.</div>
+          <div class="doc-card-actions">
+            <button class="doc-btn doc-btn-preview"
+              onclick="openPdfModal('data/mtech-udm/ManoharS_UDM_Major Project Dissertation (1).pdf')">👁
+              Preview</button>
+            <button class="doc-btn doc-btn-download"
+              onclick="openLeadGenModal('data/mtech-udm/ManoharS_UDM_Major Project Dissertation (1).pdf')">⬇
+              Download</button>
+          </div>
+        </div>
+
+        <div class="doc-card reveal" data-category="mtech-udm">
+          <div class="doc-card-header">
+            <span class="doc-type-icon">📄</span>
+          </div>
+          <div class="doc-card-title">GMDA Major Project Report</div>
+          <div class="doc-card-desc">Social infrastructure gap analysis for Gurugram using URDPFI guidelines — spatial
+            modeling with ArcGIS for urban planning recommendations.</div>
+          <div class="doc-card-actions">
+            <button class="doc-btn doc-btn-preview"
+              onclick="openPdfModal('data/mtech-udm/GMDA _Manohar_Major project report.pdf')">👁 Preview</button>
+            <button class="doc-btn doc-btn-download"
+              onclick="openLeadGenModal('data/mtech-udm/GMDA _Manohar_Major project report.pdf')">⬇
+              Download</button>
+          </div>
+        </div>
+
+        <div class="doc-card reveal" data-category="mtech-udm">
+          <div class="doc-card-header">
+            <span class="doc-type-icon">📄</span>
+          </div>
+          <div class="doc-card-title">Social Infrastructure Planning Report</div>
+          <div class="doc-card-desc">Detailed report on social infrastructure assessment and planning for Gurugram
+            Metropolitan Development Authority (GMDA).</div>
+          <div class="doc-card-actions">
+            <button class="doc-btn doc-btn-preview"
+              onclick="openPdfModal('data/mtech-udm/Social Infrastructure Planning report Manohar Sattaru.pdf')">👁
+              Preview</button>
+            <button class="doc-btn doc-btn-download"
+              onclick="openLeadGenModal('data/mtech-udm/Social Infrastructure Planning report Manohar Sattaru.pdf')">⬇
+              Download</button>
+          </div>
+        </div>
+
+        <div class="doc-card reveal" data-category="mtech-udm">
+          <div class="doc-card-header">
+            <span class="doc-type-icon">📝</span>
+          </div>
+          <div class="doc-card-title">Integrated Ambulance Facility Management</div>
+          <div class="doc-card-desc">Research on optimizing emergency ambulance facility distribution for improved
+            response times and public health coverage.</div>
+          <div class="doc-card-actions">
+            <button class="doc-btn doc-btn-download"
+              onclick="openLeadGenModal('data/mtech-udm/Integrated Ambulance facility Management.docx')">⬇
+              Download</button>
+          </div>
+        </div>
+
+        <!-- PGP-DSBA: Capstone (Grouped Dropdown) -->
+        <div class="doc-card doc-dropdown-card reveal" data-category="pgp-dsba">
+          <div class="doc-dropdown-header" onclick="toggleDocDropdown(this)">
+            <div class="doc-dropdown-title-row">
+              <span class="doc-type-icon">🏦</span>
+              <div>
+                <div class="doc-card-title">Banking Capstone Project</div>
+                <div class="doc-card-desc">End-to-end credit risk predictive modeling — 3 interdependent deliverables
+                </div>
+              </div>
+            </div>
+            <span class="doc-dropdown-arrow">▼</span>
+          </div>
+          <div class="doc-dropdown-body">
+            <div class="doc-sub-item">
+              <span class="doc-sub-label">📄 Project Report</span>
+              <div class="doc-card-actions">
+                <button class="doc-btn doc-btn-preview"
+                  onclick="openPdfModal('data/pgp-dsba/capstone/Sattaru_Manohar_Banking_Capstone Project Report (1).pdf')">👁
+                  Preview</button>
+                <button class="doc-btn doc-btn-download"
+                  onclick="openLeadGenModal('data/pgp-dsba/capstone/Sattaru_Manohar_Banking_Capstone Project Report (1).pdf')">⬇
+                  Download</button>
+              </div>
+            </div>
+            <div class="doc-sub-item">
+              <span class="doc-sub-label">📊 Presentation</span>
+              <div class="doc-card-actions">
+                <button class="doc-btn doc-btn-preview"
+                  onclick="openPdfModal('data/pgp-dsba/capstone/Sattaru Manohar Capstone project presentation.pdf')">👁
+                  Preview</button>
+                <button class="doc-btn doc-btn-download"
+                  onclick="openLeadGenModal('data/pgp-dsba/capstone/Sattaru Manohar Capstone project presentation.pdf')">⬇
+                  Download</button>
+              </div>
+            </div>
+            <div class="doc-sub-item">
+              <span class="doc-sub-label">📓 Jupyter Notebooks (Part 1 &amp; 2)</span>
+              <div class="doc-card-actions">
+                <button class="doc-btn doc-btn-download"
+                  onclick="openLeadGenModal('data/pgp-dsba/capstone/Sattaru_Manohar_Banking_CPN1 (2).ipynb')">⬇ Notebook
+                  1</button>
+                <button class="doc-btn doc-btn-download"
+                  onclick="openLeadGenModal('data/pgp-dsba/capstone/Sattaru_Manohar_Banking_CPN2 (2).ipynb')">⬇ Notebook
+                  2</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PGP-DSBA: Finance & Risk Analytics -->
+        <div class="doc-card reveal" data-category="pgp-dsba">
+          <div class="doc-card-header">
+            <span class="doc-type-icon">📄</span>
+          </div>
+          <div class="doc-card-title">Finance & Risk Analytics — Report</div>
+          <div class="doc-card-desc">Two-part project analyzing financial risk through statistical modeling and machine
+            learning — covering both Part A and Part B reports.</div>
+          <div class="doc-card-actions">
+            <button class="doc-btn doc-btn-preview"
+              onclick="openPdfModal('data/pgp-dsba/finance-risk-analytics/Sattaru_Manohar_FRA_ProjectReport final (1).pdf')">👁
+              Preview</button>
+            <button class="doc-btn doc-btn-download"
+              onclick="openLeadGenModal('data/pgp-dsba/finance-risk-analytics/Sattaru_Manohar_FRA_ProjectReport final (1).pdf')">⬇
+              Download</button>
+          </div>
+        </div>
+
+        <!-- PGP-DSBA: Marketing & Retail Analytics (Grouped Dropdown) -->
+        <div class="doc-card doc-dropdown-card reveal" data-category="pgp-dsba">
+          <div class="doc-dropdown-header" onclick="toggleDocDropdown(this)">
+            <div class="doc-dropdown-title-row">
+              <span class="doc-type-icon">📊</span>
+              <div>
+                <div class="doc-card-title">Marketing &amp; Retail Analytics</div>
+                <div class="doc-card-desc">Market basket analysis, customer segmentation &amp; retail optimization — 2
+                  parts</div>
+              </div>
+            </div>
+            <span class="doc-dropdown-arrow">▼</span>
+          </div>
+          <div class="doc-dropdown-body">
+            <div class="doc-sub-item">
+              <span class="doc-sub-label">📄 Part A — Market Basket Analysis</span>
+              <div class="doc-card-actions">
+                <button class="doc-btn doc-btn-preview"
+                  onclick="openPdfModal('data/pgp-dsba/marketing-retail-analytics/Manohar Part A - MBA.pdf')">👁
+                  Preview</button>
+                <button class="doc-btn doc-btn-download"
+                  onclick="openLeadGenModal('data/pgp-dsba/marketing-retail-analytics/Manohar Part A - MBA.pdf')">⬇
+                  Download</button>
+              </div>
+            </div>
+            <div class="doc-sub-item">
+              <span class="doc-sub-label">📄 Part B — Segmentation &amp; Optimization</span>
+              <div class="doc-card-actions">
+                <button class="doc-btn doc-btn-preview"
+                  onclick="openPdfModal('data/pgp-dsba/marketing-retail-analytics/Manohar Part B_ MBA (1).pdf')">👁
+                  Preview</button>
+                <button class="doc-btn doc-btn-download"
+                  onclick="openLeadGenModal('data/pgp-dsba/marketing-retail-analytics/Manohar Part B_ MBA (1).pdf')">⬇
+                  Download</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PGP-DSBA: Statistical Methods -->
+        <div class="doc-card reveal" data-category="pgp-dsba">
+          <div class="doc-card-header">
+            <span class="doc-type-icon">📄</span>
+          </div>
+          <div class="doc-card-title">Statistical Methods for Decision Making</div>
+          <div class="doc-card-desc">Applied probability distributions, hypothesis testing, and ANOVA to solve complex
+            business estimation problems and evaluate reliability.</div>
+          <div class="doc-card-actions">
+            <button class="doc-btn doc-btn-preview"
+              onclick="openPdfModal('data/pgp-dsba/statistical-methods/Sattaru_Manohar_SMDM_ProjectReport_04-06-2023.pdf')">👁
+              Preview</button>
+            <button class="doc-btn doc-btn-download"
+              onclick="openLeadGenModal('data/pgp-dsba/statistical-methods/Sattaru_Manohar_SMDM_ProjectReport_04-06-2023.pdf')">⬇
+              Download</button>
+          </div>
+        </div>
+
+        <!-- QCI -->
+        <div class="doc-card reveal" data-category="qci">
+          <div class="doc-card-header">
+            <span class="doc-type-icon">📄</span>
+          </div>
+          <div class="doc-card-title">Village Certification Scheme</div>
+          <div class="doc-card-desc">Quality Council of India's village assessment and certification framework for rural
+            development benchmarking and quality standards.</div>
+          <div class="doc-card-actions">
+            <button class="doc-btn doc-btn-preview"
+              onclick="openPdfModal('data/quality-council-india/Village_Certification_Scheme.pdf')">👁 Preview</button>
+            <button class="doc-btn doc-btn-download"
+              onclick="openLeadGenModal('data/quality-council-india/Village_Certification_Scheme.pdf')">⬇
+              Download</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PDF Preview Modal -->
+    <div class="custom-modal" id="pdfModal">
+      <div class="custom-modal-content">
+        <button class="modal-close-btn" onclick="closePdfModal()">✕</button>
+        <div class="pdf-iframe-container">
+          <iframe id="pdfFrame" src="" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lead Gen Form Modal -->
+    <div class="custom-modal" id="leadGenModal">
+      <div class="custom-modal-content form-modal-content">
+        <button class="modal-close-btn" onclick="closeLeadGenModal()">✕</button>
+
+        <div class="lead-form-header">
+          <h3>Download Request</h3>
+          <p>Please provide a few details to download this document.</p>
+        </div>
+
+        <form class="lead-form" id="leadGenForm" onsubmit="handleLeadGenSubmit(event)">
+          <div class="form-group">
+            <label for="leadName">Full Name *</label>
+            <input type="text" id="leadName" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="leadOrg">Organization / Company *</label>
+            <input type="text" id="leadOrg" required placeholder="Acme Corp">
+          </div>
+          <div class="form-group">
+            <label for="leadPos">Position / Title</label>
+            <input type="text" id="leadPos" placeholder="Senior Data Analyst">
+          </div>
+          <div class="form-group">
+            <label for="leadEmail">Email Address *</label>
+            <input type="email" id="leadEmail" required placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label for="leadContact">Contact No. (Optional)</label>
+            <input type="tel" id="leadContact" placeholder="+1 234 567 8900">
+          </div>
+
+          <button type="submit" class="lead-form-submit" id="leadSubmitBtn">Submit & Download</button>
+        </form>
       </div>
     </div>
   </section>
@@ -644,6 +1067,85 @@
         </div>
       </div>
 
+      <!-- Google AI Specialization -->
+      <div class="cert-featured reveal" style="margin-top: var(--space-2xl);">
+        <div class="cert-featured-header">
+          <div class="cert-featured-badge">🤖</div>
+          <div class="cert-featured-info">
+            <h3>Google AI Specialization Certificate</h3>
+            <p>7-Course Series · Coursera · Google</p>
+            <div class="cert-featured-links">
+              <a href="https://coursera.org/share/31d83aaae1b6e1fb43b07184b7b3edd8" target="_blank" rel="noopener"
+                class="btn btn-primary" style="padding:0.5rem 1.25rem;font-size:0.8rem;">View Certificate
+                →</a>
+              <a href="https://www.coursera.org/specializations/google-ai" target="_blank" rel="noopener"
+                class="btn btn-outline" style="padding:0.5rem 1.25rem;font-size:0.8rem;">View Program →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-skills-row">
+          <div class="cert-skills-group">
+            <h4>Skills Gained</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">AI Fluency</span>
+              <span class="skill-tag">Brainstorming with AI</span>
+              <span class="skill-tag">AI-Powered Research</span>
+              <span class="skill-tag">Content Creation</span>
+              <span class="skill-tag">Data Analysis with AI</span>
+              <span class="skill-tag">App Building with AI</span>
+            </div>
+          </div>
+          <div class="cert-skills-group">
+            <h4>Tools Learned</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Google AI</span>
+              <span class="skill-tag">Gemini</span>
+              <span class="skill-tag">Google Workspace</span>
+              <span class="skill-tag">AI Studio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-courses-grid">
+          <div class="cert-course-card">
+            <span class="cert-course-num">01</span>
+            <h5>AI Fundamentals</h5>
+            <p>Core concepts of artificial intelligence, how AI models work, and practical applications</p>
+          </div>
+          <div class="cert-course-card">
+            <span class="cert-course-num">02</span>
+            <h5>AI for Brainstorming and Planning</h5>
+            <p>Using AI to generate ideas, structure plans, and accelerate creative workflows</p>
+          </div>
+          <div class="cert-course-card">
+            <span class="cert-course-num">03</span>
+            <h5>AI for Research and Insights</h5>
+            <p>Leveraging AI for faster, deeper research and extracting actionable insights</p>
+          </div>
+          <div class="cert-course-card">
+            <span class="cert-course-num">04</span>
+            <h5>AI for Writing and Communicating</h5>
+            <p>Enhancing written communication and professional writing with AI assistance</p>
+          </div>
+          <div class="cert-course-card">
+            <span class="cert-course-num">05</span>
+            <h5>AI for Content Creation</h5>
+            <p>Creating compelling visual and text content using generative AI tools</p>
+          </div>
+          <div class="cert-course-card">
+            <span class="cert-course-num">06</span>
+            <h5>AI for Data Analysis</h5>
+            <p>Applying AI to analyze datasets, find patterns, and generate data-driven conclusions</p>
+          </div>
+          <div class="cert-course-card">
+            <span class="cert-course-num">07</span>
+            <h5>AI for App Building</h5>
+            <p>Building custom AI-powered applications and coding solutions with AI assistance</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Other Certifications -->
       <div class="certs-grid" style="margin-top: var(--space-2xl);">
         <div class="cert-card reveal">
@@ -656,15 +1158,6 @@
           </div>
         </div>
 
-        <div class="cert-card reveal">
-          <div class="cert-badge">🏅</div>
-          <div class="cert-info">
-            <h3>All Credly Badges</h3>
-            <p>View all verified credentials and badges</p>
-            <a href="https://www.credly.com/users/manohar-sattaru/badges" target="_blank" rel="noopener">View on Credly
-              →</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -693,20 +1186,6 @@
               <span class="contact-link-icon">🔗</span>
               LinkedIn Profile
             </a>
-            <a href="https://github.com/Manoharsattaru" target="_blank" rel="noopener" class="contact-link">
-              <span class="contact-link-icon">💻</span>
-              GitHub Profile
-            </a>
-            <a href="https://www.credly.com/users/manohar-sattaru/badges" target="_blank" rel="noopener"
-              class="contact-link">
-              <span class="contact-link-icon">🏅</span>
-              Credly Badges
-            </a>
-            <a href="https://eportfolio.mygreatlearning.com/manohar-sattaru" target="_blank" rel="noopener"
-              class="contact-link">
-              <span class="contact-link-icon">🌐</span>
-              E-Portfolio
-            </a>
           </div>
         </div>
 
@@ -723,13 +1202,15 @@
           <div class="form-group">
             <textarea id="formMessage" placeholder="Your Message" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-            Send Message
-          </button>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+              Send Message
+            </button>
+          </div>
         </form>
       </div>
     </div>
