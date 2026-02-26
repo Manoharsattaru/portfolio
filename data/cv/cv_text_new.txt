@@ -1,0 +1,301 @@
+              Sattaru Manohar 
+Manoharansiddarth@gmail.com |9542642876 | 
+LinkedIn |Eportfolio| https://manoharsattaru.github.io/portfolio/ 
+Dynamic Technology Consultant with over 6 years of experience leading large-scale digital transformation and public 
+sector advisory programs. Expert in aligning AI-driven innovations and advanced analytics with strategic governance 
+goals to enhance systemic efficiency. Spearheading large-scale PMU operations and technical roadmaps for high-priority 
+initiatives. Adept at navigating complex stakeholder environments to translate strategic policy into production-ready 
+digital solutions. Highly proficient in data modeling and predictive analytics, with a specialized focus on driving 
+operational transparency through evidence-based research, strategic documentation, and process standardization. 
+Profile Summary 
+• 
+Engineered a production-ready, NLP-based Internal Audit assistant utilizing a RAG hybrid lookup-LLM 
+architecture (Flask, spaCy, Ollama) to achieve 95% accuracy via direct rule extraction and vector similarity search. 
+Deployed a privacy-focused, offline-capable framework featuring REST API support and embeddable widgets, 
+ensuring secure document Q&A and seamless integration across internal government modules. 
+• 
+Led digital transformation program for the Ministry of Finance (CGA), including development of proof-of-
+concepts (POCs) and technical documentation for AI/ML chatbot (Rule based, fraud analytics, and OCR 
+implementations within PFMS modules aligning technology delivery with fiscal governance goals. 
+• 
+Formulated strategy and transformation roadmap for GIFMIS modernization, integrating platform 
+engineering principles and IMF’s Public Financial Management (PFM) guidelines to enhance financial system 
+efficiency and interoperability. 
+• 
+Architected a data transition framework to migrate over 170+ SFTP/XML-based integrations to RESTful 
+JSON APIs, enabling real-time interoperability between RBI, banks, payment gateways, and external systems. 
+• 
+Conceptualized and designed AI/ML-based Scheme analytics platform including data source pipeline 
+integration, high-level system architecture, and analytics layer for predictive scheme monitoring. 
+• 
+Directed PMU operations for the Ministry of Home Affairs (MHA) under the Quality Council of India, co-
+leading a 70-member consulting team to deliver dashboards, data systems, and SOPs that improved decision-
+making and operational transparency. 
+• 
+Performed strategic policy and market research across sectors such as Medical Value Tourism, Pharma, 
+Infrastructure, and Rural Development, conducting international benchmarking and KPI framework 
+development to inform national strategy formulation. 
+• 
+Strengthened governance and risk management mechanisms in Government e-Marketplace (GeM) by detecting 
+vendor fraud patterns, performing due diligence, and recommending incident management policies based on 
+data-driven insights. 
+• 
+Delivered cross-functional stakeholder management and advisory across ministries and development 
+agencies including CGA, MHA, MoHUA, GEM GIZ and GMDA to align business objectives with 
+technology execution. 
+• 
+Demonstrated hands-on technical acumen in Python, SQL, Power BI, Tableau, and data modeling, supporting 
+analytical strategy development, dashboard creation, and business case evaluation. 
+• 
+Authored multiple strategic and technical documents, including FRDs, BRDs, RFPs, tender responses, SOPs, 
+and digital transformation roadmaps contributing to business development, client delivery excellence, and 
+institutional knowledge building. 
+WORK EXPERIENCE 
+KPMG Advisory Services Pvt. Ltd  
+ 
+ 
+ 
+ 
+ 
+ 
+          Oct 2024 – Present 
+Senior Consultant (G&PS - Digital Government Advisory) 
+PMU – Ministry of Finance (CGA) 
+- 
+Engineered an NLP-based Bharatkosh, Internal Audit Wing chatbot IAW - assistant with hybrid lookup-LLM 
+architecture using Flask, spaCy, and Ollama, achieving 100% accuracy through direct rule extraction and vector 
+similarity search. 
+- 
+Created a production-ready chatbot with embeddable widget support, REST API, and local LLM integration for 
+privacy-focused, offline-capable document Q&A. 
+- 
+Prepared POC and technical documentation for module wise chatbots, fraud analytics and OCR 
+implementations to PFMS modules - Bharatkosh and E-Bill. 
+- 
+Prepared strategy and approach to transform GIFMIS based on platform engineering and IMF PFM guidelines. 
+- 
+Assisted client in developing internal dashboards for multiple modules within the PFMS. 
+- 
+Prepared POC and design document for AI/ML based scheme analytics application for PFMS including data 
+source pipeline integration through external APIs, high-level architecture design. 
+- 
+Prepared detailed technical documentation for transitioning PFMS module wise data sharing from SFTP based 
+XML to JSON-based RESTFUL API (170+ APIs) integration with RBI, Banks, Payment Gateway Aggregators 
+and External systems. 
+- 
+Analysed FY 2024 Prakalpa data and identified data reconciliation mismatch between RBI and ZAO records. 
+- 
+Audited and Assessed performance of 8 MHA PAOs to identify user-level (Pr.AOs, AAO, PAOs, DDOs, DH) 
+challenges in E-bill module. 
+- 
+Managing client interactions and addressing technical challenges related to the ICEGATE and GST Refunds 
+modules. 
+- 
+Supporting business development activities, including RFP and tender preparation. 
+Quality Council of India (QCI). New Delhi                              
+ 
+ 
+        Oct 2021 – Sep 2024 
+Associate Manager 
+ 
+ 
+       
+ 
+ 
+ 
+ 
+ 
+          Jul 2023 – Sep 2024 
+Strategy and Policy Division 
+- 
+Market research and policy gap analysis of sectors – Medical value tourism, Rural development, Infrastructure. 
+- 
+Conducted in-depth secondary research and data-driven analysis of India’s Medical Value Tourism (MVT) sector 
+by identifying and benchmarking global key performance indicators (KPIs). 
+- 
+Mapped and evaluated international best practices in medical tourism sector to derive insights for enhancing 
+India’s competitiveness. 
+- 
+Feature identification to predict onboarding of manufacturers in Make in India scheme using RFM technique. 
+- 
+Drafted a framework and developing KPIs for holistic development of rural areas. 
+- 
+Concept ideation and framework design to establish a National Infrastructure Auditing and Monitoring portal. 
+- 
+Worked on policy gap analysis and explored global best practices in quality infrastructure and structural health 
+assessments. 
+Project Planning and Implementation Division – PPID 
+PMU – Ministry of Home Affairs                                                                                             Jul 2023 – Feb 2024 
+- 
+Oversaw data cleaning and analysis, ensuring data integrity and actionable insights. 
+- 
+Designed and implemented dashboards and daily reports for the client, facilitating informed decision-making 
+and project tracking. 
+- 
+Conducted extensive stakeholder management, liaising with senior bureaucrats of the GOI. 
+- 
+Managed the entire project lifecycle, from team hiring to completion of deliverables, ensuring effective execution 
+and alignment with project goals. 
+- 
+Led a team of 12 consultants and co-led a team of 70 consultants on a high-priority, confidential Government 
+of India (GOI) project. 
+- 
+Provided project recommendations and prepared SOPs for data cleaning, analyzing, and storing data. 
+GeM PMU – Government E Marketplace (Ministry of Commerce and Industry) 
+       Apr 2022 - Jun 2023 
+- 
+Managed a team of 14 to execute high-stakes GEM portal onboarding for vendors and service providers, 
+implemented standardized SOPs and due diligence frameworks to validate tender completion across state and 
+central government departments. 
+- 
+Engineered data-driven fraud detection protocols to identify anomalous vendor behaviors, drafted and presented 
+incident management policies to stakeholders to mitigate risks associated with fraudulent certifications and 
+historical data discrepancies. 
+- 
+Developed OCR-based prototypes and data-processing pipelines to detect anomalous behaviors and suspicious 
+transaction trails within the GeM portal, optimizing audit efficiency by 90% 
+Junior Associate                                                                                                                            Oct 2021 - Mar 2022 
+- 
+Optimized the end-to-end onboarding lifecycle for 260+ service categories on the GeM portal; performed high-
+frequency data auditing and reporting to ensure data integrity and track service providers and vendors growth 
+for senior stakeholders. 
+ 
+German Development Corporation (GIZ – India), New Delhi                     
+ 
+        Feb 2021- Aug 2021 
+Project Intern – Analytics 
+- 
+Leveraged QGIS to analyze spatial datasets for 7 AMRUT city masterplans; converted complex data into 
+actionable urban policy frameworks.  
+- 
+Developed a MoHUA interactive dashboard to perform gap analysis on town-planner vacancies and existing 
+cadre, enabling ULBs to execute strategic workforce modeling for future infrastructure demands. 
+SG Analytics – Pune                                            
+ 
+ 
+ 
+ 
+       Aug 2020 - Nov 2020  
+ESG Consultant 
+- 
+Executed end-to-end research and analysis on ESG performance for 14 cross-sector global entities, identifying 
+key risks and opportunities in their environmental and social governance. 
+- 
+Streamlined data collection for over 450+ performance indicators; audited company processes and 
+stakeholder commitments to ensure 100% compliance with GRI reporting requirements. 
+Safetipin - Gurugram                                                                                                                   Jan 2020 - May 2020 
+Research and Analytics Intern 
+- 
+Spearheaded the end-to-end development of a new safety audit vertical; designed the core methodology and 
+successfully integrated custom survey frameworks into the Safetipin app for real-time data capture. 
+- 
+Transformed raw audit data into high-impact visualizations and policy recommendations for Pune City; 
+successfully translated complex quantitative datasets into strategic safety improvements for government 
+stakeholders. 
+  
+Gurugram Metropolitan Development Authority (GMDA) – Gurugram                                 Jun 2019 - Aug 2019 
+Research Intern 
+- 
+Conducted a comprehensive gap analysis of social infrastructure for GMDA, delivering data-driven policy 
+solutions aligned with URDPFI guidelines to optimize urban planning and resource allocation. 
+- 
+Executed advanced spatial modeling of using ArcGIS; translated complex geospatial data into actionable site-
+selection and policy recommendations for regional development. 
+Aarush Startup – Visakhapatnam 
+ 
+ 
+ 
+ 
+ 
+ 
+        Jan 2018 – Jun 2018 
+R & D Executive (Product Manager) 
+- 
+Spearheaded a multi-sector startup consortium (IT, Health, Solar) to pitch and secure "Cluster Village 
+Development" initiatives with the Govt. of AP; delivered critical waste-management policy frameworks to global 
+stakeholders including UKAID and UNDP. 
+- 
+Led a team of 8 to transform Aarushlife.com from concept to investor-ready MVP; designed the business model 
+and high-fidelity demo used for investor buy-in. 
+EDUCATION 
+Texas McCombs School of Business  
+ 
+ 
+ 
+ 
+ 
+     
+       2023 - 2024 
+- 
+Post Graduate Program in Data Science and Business Analytics 
+- 
+Capstone Project – Banking credit card - Predictive analytics for credit risk management  
+- 
+Eportfolio - https://eportfolio.mygreatlearning.com/manohar-sattaru 
+TERI School of Advanced Studies, New Delhi                                                                                       2018 - 2020 
+- 
+M.Tech in Urban development and Management 
+Aditya Institute of Technology and Management, Srikakulam    
+ 
+ 
+ 
+        2013 – 2017 
+- 
+B. Tech in Mechanical Engineering  
+SKILL SET 
+- 
+Python, Flask, Gradio, Hugging face, 
+- 
+EDA, SQL, Tableau, and Power BI  
+- 
+GCP - MLOPS 
+- 
+GEN AI Chatbots - On Prem and Cloud  
+- 
+Predictive modeling & Forecasting  
+- 
+Project Management 
+- 
+Technology consulting 
+- 
+Stakeholder Management 
+- 
+Business and Risk analytics 
+- 
+Policy Advocacy and Communication 
+Certifications 
+ 
+1. IBM AI Developer - https://coursera.org/share/fea2f3b4ef503780594dc1a54fec0cc2 
+2. Udemy - Data Science A-Z: Hands-On Exercises ude.my/UC-82df76bc-d935-4e60-96c4-07fa968028b8 
+3. Google AI Professional - https://coursera.org/share/9ca71204ce5844e2bf2f4da13a595e2a  
+ 
+Declaration 
+ 
+I hereby declare that the above-mentioned information is correct to the best of my knowledge. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Date- 24/02/2026  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sattaru Manohar 

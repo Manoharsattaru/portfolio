@@ -32,46 +32,42 @@ const ChatBot = (() => {
 
         experience: [
             {
-                company: "KPMG Advisory Services Pvt. Ltd.",
-                role: "Senior Consultant (G&PS - Digital Government Advisory)",
+                company: "KPMG Advisory Services",
+                role: "Senior Consultant — Digital Government Advisory (CGA, MoF)",
                 duration: "Oct 2024 – Present",
-                project: "PMU – Ministry of Finance (CGA)",
+                project: "Ministry of Finance",
                 highlights: [
-                    "Engineered an NLP-based Internal Audit Wing chatbot with hybrid lookup-LLM architecture using Flask, spaCy, and Ollama, achieving 100% accuracy",
-                    "Prepared POC and technical documentation for module-wise chatbots, fraud analytics and OCR implementations to PFMS modules - Bharatkosh and E-Bill",
-                    "Prepared strategy and approach to transform GIFMIS based on platform engineering and IMF PFM guidelines",
-                    "Prepared detailed technical documentation for transitioning PFMS 170+ APIs from SFTP-based XML to JSON-based RESTful API integration with RBI, Banks, Payment Gateways and External systems",
-                    "Designed AI/ML based scheme analytics application for PFMS including data source pipeline integration, high-level architecture design",
-                    "Analysed FY 2024 Prakalpa data and identified data reconciliation mismatch between RBI and ZAO records",
-                    "Supporting business development activities, including RFP and tender preparation"
+                    "Engineered NLP-based Internal Audit chatbot with hybrid lookup-LLM architecture using Flask, spaCy, and Ollama — achieving 90% accuracy",
+                    "Prepared POCs and documentation for AI/ML chatbots, fraud analytics, and OCR implementations in PFMS modules — Bharatkosh and E-Bill",
+                    "Architected transition of 170+ SFTP/XML integrations to RESTful JSON APIs for RBI, banks, and payment gateways",
+                    "Developed strategy for GIFMIS modernization based on platform engineering and IMF PFM guidelines"
                 ]
             },
             {
                 company: "Quality Council of India (QCI)",
-                role: "Associate Manager — Strategy and Policy Division",
+                role: "Associate Manager — Strategy & Policy Division",
                 duration: "Jul 2023 – Sep 2024",
-                project: "Strategy & Policy Division + PMU – Ministry of Home Affairs",
+                project: "PMU for Ministry of Home Affairs",
                 highlights: [
-                    "Market research and policy gap analysis of Medical Value Tourism, Rural Development, Infrastructure sectors",
-                    "Led PMU for Ministry of Home Affairs, co-leading a 70-member consulting team on a high-priority GOI project",
-                    "Developed KPI frameworks and international benchmarking for national strategy formulation",
-                    "Designed dashboards and daily reports for MHA, facilitating informed decision-making"
+                    "Conducted market research and policy gap analysis for Medical Value Tourism, Rural Development, and Infrastructure sectors",
+                    "Led PMU for Ministry of Home Affairs — co-directing a 70-member consulting team on a high-priority GOI project",
+                    "Developed KPI frameworks and benchmarked international best practices for India's competitiveness"
                 ]
             },
             {
                 company: "Quality Council of India (QCI)",
-                role: "GeM PMU — Government e-Marketplace",
+                role: "GeM PMU — Government e-Marketplace (MoCI)",
                 duration: "Apr 2022 – Jun 2023",
-                project: "GeM Portal (Ministry of Commerce and Industry)",
+                project: "GeM Portal",
                 highlights: [
-                    "Managed team of 14 for high-stakes GeM portal onboarding for vendors and service providers",
+                    "Managed a team of 14 for high-stakes GeM portal onboarding — vendors and service providers",
                     "Developed OCR-based prototypes and data-processing pipelines, optimizing audit efficiency by 90%",
                     "Engineered data-driven fraud detection protocols to identify anomalous vendor behaviors"
                 ]
             },
             {
                 company: "Quality Council of India (QCI)",
-                role: "Junior Associate",
+                role: "Junior Associate — GeM Portal",
                 duration: "Oct 2021 – Mar 2022",
                 project: "GeM Portal",
                 highlights: [
@@ -106,7 +102,7 @@ const ChatBot = (() => {
                 project: "Safety Audit Platform",
                 highlights: [
                     "Spearheaded development of a new safety audit vertical for the Safetipin app",
-                    "Transformed raw audit data into policy recommendations for Pune City"
+                    "Transformed raw audit data into policy recommendations for Pune City stakeholders"
                 ]
             },
             {
@@ -125,9 +121,8 @@ const ChatBot = (() => {
                 duration: "Jan 2018 – Jun 2018",
                 project: "Cluster Village Development",
                 highlights: [
-                    "Spearheaded multi-sector consortium (IT, Health, Solar) for Cluster Village Development with Govt. of AP",
-                    "Led team of 8 to build Aarushlife.com from concept to investor-ready MVP",
-                    "Delivered waste-management policy frameworks to UKAID and UNDP"
+                    "Spearheaded multi-sector consortium (IT, Health, Solar) for 'Cluster Village Development' with Govt. of AP",
+                    "Led team of 8 to build Aarushlife.com from concept to investor-ready MVP"
                 ]
             }
         ],
@@ -184,17 +179,33 @@ const ChatBot = (() => {
                 skillsGained: ["RAG", "Prompt Engineering", "LLM Applications", "Computer Vision", "Machine Learning", "Responsible AI", "Software Architecture", "SDLC"],
                 toolsLearned: ["Python", "Flask", "LangChain", "Generative AI", "REST APIs", "IBM Cloud", "ChatGPT", "GitHub Copilot"]
             },
+            {
+                name: "Google AI Specialization",
+                platform: "Coursera",
+                url: "https://coursera.org/share/31d83aaae1b6e1fb43b07184b7b3edd8",
+                programUrl: "https://www.coursera.org/specializations/google-ai",
+                courses: [
+                    "AI Fundamentals",
+                    "AI for Brainstorming and Planning",
+                    "AI for Research and Insights",
+                    "AI for Writing and Communicating",
+                    "AI for Content Creation",
+                    "AI for Data Analysis",
+                    "AI for App Building"
+                ],
+                skillsGained: ["AI Fluency", "Brainstorming", "Research", "Communication", "Content Creation", "Data Analysis", "App Building"],
+                toolsLearned: ["Google AI", "Gemini", "Vertex AI", "Prompt Engineering"]
+            },
             { name: "Data Science A-Z: Hands-On Exercises", platform: "Udemy", url: "https://ude.my/UC-82df76bc-d935-4e60-96c4-07fa968028b8" }
         ],
 
         keyProjects: [
-            "NLP-based Internal Audit Wing chatbot with hybrid RAG/lookup-LLM architecture (Flask, spaCy, Ollama) — 100% accuracy",
-            "PFMS API Transition Framework — migrating 170+ SFTP/XML integrations to RESTful JSON APIs for RBI, banks, and payment gateways",
-            "GeM Fraud Detection System — OCR-based prototypes and data-processing pipelines, optimizing audit efficiency by 90%",
-            "MHA PMU Operations — directed 70-member consulting team for dashboards, data systems, and SOPs",
-            "AI/ML based Scheme Analytics platform design for PFMS — data pipeline integration and architecture design",
-            "GIFMIS Modernization Strategy — platform engineering + IMF PFM guidelines",
-            "Medical Value Tourism sector research — international KPI benchmarking for India's competitiveness"
+            "Engineered NLP-based Internal Audit chatbot with hybrid lookup-LLM architecture (Flask, spaCy, Ollama) — achieving 90% accuracy",
+            "Architected transition of 170+ SFTP/XML integrations to RESTful JSON APIs for RBI, banks, and payment gateways",
+            "Developed OCR-based prototypes and data-processing pipelines, optimizing audit efficiency by 90%",
+            "Led PMU for Ministry of Home Affairs — co-directing a 70-member consulting team",
+            "Developed strategy for GIFMIS modernization based on platform engineering and IMF PFM guidelines",
+            "Conducted market research and policy gap analysis for Medical Value Tourism, Rural Development, and Infrastructure sectors"
         ]
     };
 
@@ -281,11 +292,19 @@ const ChatBot = (() => {
             }
         },
         {
-            keywords: ["certification", "certified", "certificate", "credly", "badge", "ibm ai", "ibm developer", "coursera cert"],
+            keywords: ["certification", "certified", "certificate", "credly", "badge", "ibm ai", "google ai", "ibm developer", "coursera cert"],
             response: () => {
                 const ibm = CV_DATA.certifications[0];
-                const courseList = ibm.courses.map((c, i) => `${i + 1}. ${c}`).join('\n');
-                return `Manohar's certifications:\n\n🎓 **${ibm.name}** — ${ibm.platform} ([View Certificate](${ibm.url})) | ([View Program](${ibm.programUrl}))\n\n**10-Course Series:**\n${courseList}\n\n**Skills:** ${ibm.skillsGained.join(', ')}\n**Tools:** ${ibm.toolsLearned.join(', ')}\n\n🏅 **${CV_DATA.certifications[1].name}** — ${CV_DATA.certifications[1].platform} ([View](${CV_DATA.certifications[1].url}))\n\nView all badges on [Credly](${CV_DATA.credly}).`;
+                const google = CV_DATA.certifications[1];
+                return `Manohar's major certifications include:\n\n🎓 **${ibm.name}** — ${ibm.platform} ([View](${ibm.url}))\n🎓 **${google.name}** — ${google.platform} ([View](${google.url}))\n\nHe has also completed courses like Data Science A-Z and holds multiple badges. View all badges on [Credly](${CV_DATA.credly}).`;
+            }
+        },
+        {
+            keywords: ["google", "google course", "google ai"],
+            response: () => {
+                const google = CV_DATA.certifications[1];
+                const courseList = google.courses.map((c, i) => `${i + 1}. ${c}`).join('\n');
+                return `Manohar holds the **${google.name}** from Google via Coursera — an extensive 7-course program focusing on AI fundamentals, communication, content creation, and app building:\n\n${courseList}\n\n**Skills Gained:** ${google.skillsGained.join(', ')}\n\n🔗 [View Certificate](${google.url})`;
             }
         },
         {
@@ -325,8 +344,12 @@ const ChatBot = (() => {
             response: () => `At **SG Analytics, Pune** (Aug–Nov 2020), as an ESG Consultant:\n\n• Executed ESG performance analysis for **14 cross-sector global entities**\n• Streamlined data collection for **450+ performance indicators**\n• Ensured **100% compliance** with GRI reporting requirements`
         },
         {
+            keywords: ["documents", "reports", "papers", "publications", "download", "thesis", "dissertation"],
+            response: () => `In the "Reports" section of this website, you can view and download Manohar's academic and professional work, including:\n\n• **M.Tech Dissertation:** Urban Planning & Infrastructure (GMDA)\n• **PGP-DSBA Capstone/Projects:** Credit Risk Modeling, Finance & Risk Analytics, Market Basket Analysis\n• **Professional Reports:** Aarush Group rural development, QCI Village Certification\n• **His Latest CV**\n\nYou can preview PDFs directly on the site or download them via a quick form!`
+        },
+        {
             keywords: ["hi", "hello", "hey", "good morning", "good evening", "good afternoon"],
-            response: () => `Hello! 👋 I'm Manohar's AI assistant. I can help you learn about his experience, skills, projects, education, and more. What would you like to know?`
+            response: () => `Hello! 👋 I'm Manohar's AI assistant. I can help you learn about his experience, skills, projects, education, certifications, and research reports. What would you like to know?`
         },
         {
             keywords: ["thanks", "thank you", "great", "awesome", "cool", "nice"],
@@ -697,7 +720,43 @@ Key facts:
     let messageHistory = [];
 
     function init() {
-        createChatWidget();
+        // Bind event listeners to hardcoded HTML elements
+        const toggleBtn = document.getElementById('chatFab');
+        const closeBtn = document.getElementById('chatCloseBtn');
+        const refreshBtn = document.getElementById('chatRefreshBtn');
+        const form = document.getElementById('chatForm');
+
+        if (toggleBtn) toggleBtn.addEventListener('click', toggleChat);
+        if (closeBtn) closeBtn.addEventListener('click', () => { if (chatOpen) toggleChat(); });
+
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', () => {
+                document.getElementById('chatMessages').innerHTML = '';
+                messageHistory = [];
+                addInitialMessage();
+
+                // Show suggestions again
+                const suggestions = document.getElementById('chatSuggestions');
+                if (suggestions) suggestions.style.display = 'flex';
+                updateStatus('Hybrid RAG Engine');
+            });
+        }
+
+        if (form) {
+            form.addEventListener('submit', (e) => handleSubmit(e));
+        }
+
+        // Bind suggestion buttons
+        document.querySelectorAll('.chat-suggestion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                sendSuggestion(btn.getAttribute('data-query'));
+            });
+        });
+
+        addInitialMessage();
+    }
+
+    function addInitialMessage() {
         checkOllama().then(available => {
             if (available) {
                 addBotMessage(`Hello! 👋 I'm Manohar's AI assistant, powered by **${ollamaModel}** with a hybrid RAG engine. Ask me anything about his experience, skills, projects, or background!`);
@@ -705,61 +764,6 @@ Key facts:
                 addBotMessage(`Hello! 👋 I'm Manohar's AI assistant. I use a hybrid RAG engine to answer questions about his experience, skills, projects, education, and more.\n\n_💡 Tip: Start Ollama locally for richer AI-generated answers!_`);
             }
         });
-    }
-
-    function createChatWidget() {
-        // Floating button
-        const fab = document.createElement('div');
-        fab.id = 'chatFab';
-        fab.innerHTML = `
-      <div class="chat-fab-pulse"></div>
-      <div class="chat-fab-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-      </div>
-      <div class="chat-fab-close" style="display:none">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </div>
-    `;
-        fab.addEventListener('click', toggleChat);
-
-        // Chat panel
-        const panel = document.createElement('div');
-        panel.id = 'chatPanel';
-        panel.innerHTML = `
-      <div class="chat-header">
-        <div class="chat-header-info">
-          <div class="chat-avatar">SM</div>
-          <div>
-            <div class="chat-header-name">Manohar's AI Assistant</div>
-            <div class="chat-header-status" id="chatStatus">
-              <span class="status-dot"></span> Hybrid RAG Engine
-            </div>
-          </div>
-        </div>
-        <button class="chat-close-btn" onclick="ChatBot.toggle()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="chat-messages" id="chatMessages"></div>
-      <div class="chat-input-area">
-        <div class="chat-suggestions" id="chatSuggestions">
-          <button onclick="ChatBot.sendSuggestion('What is your experience?')">💼 Experience</button>
-          <button onclick="ChatBot.sendSuggestion('What are your skills?')">⚡ Skills</button>
-          <button onclick="ChatBot.sendSuggestion('Tell me about your projects')">🚀 Projects</button>
-          <button onclick="ChatBot.sendSuggestion('How can I contact you?')">📬 Contact</button>
-        </div>
-        <form class="chat-input-form" id="chatForm" onsubmit="ChatBot.handleSubmit(event)">
-          <input type="text" id="chatInput" placeholder="Ask about Manohar's profile..." autocomplete="off">
-          <button type="submit" id="chatSendBtn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-        </form>
-      </div>
-      <div class="chat-disclaimer">Hybrid RAG: Keyword Lookup → Fuzzy FAQ → TF-IDF → Ollama LLM</div>
-    `;
-
-        document.body.appendChild(panel);
-        document.body.appendChild(fab);
     }
 
     function toggleChat() {
@@ -770,13 +774,13 @@ Key facts:
 
         if (chatOpen) {
             panel.classList.add('open');
-            fabIcon.style.display = 'none';
-            fabClose.style.display = 'flex';
+            if (fabIcon) fabIcon.style.display = 'none';
+            if (fabClose) fabClose.style.display = 'flex';
             document.getElementById('chatInput').focus();
         } else {
             panel.classList.remove('open');
-            fabIcon.style.display = 'flex';
-            fabClose.style.display = 'none';
+            if (fabIcon) fabIcon.style.display = 'flex';
+            if (fabClose) fabClose.style.display = 'none';
         }
     }
 
@@ -824,7 +828,8 @@ Key facts:
     }
 
     function updateStatus(text) {
-        document.getElementById('chatStatus').innerHTML = `<span class="status-dot"></span> ${text}`;
+        const el = document.getElementById('chatStatus');
+        if (el) el.innerHTML = `<span class="status-dot"></span> ${text}`;
     }
 
     function formatMarkdown(text) {

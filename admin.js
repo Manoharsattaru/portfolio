@@ -7,7 +7,7 @@
     // ========== CONFIGURATION ==========
     // *** PASTE YOUR GOOGLE CLIENT ID HERE ***
     // Get it from: https://console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client IDs
-    const GOOGLE_CLIENT_ID = '912630447671-cif48icc3pui4cbepu3eltrifnpeh9i5.apps.googleusercontent.com';
+    const GOOGLE_CLIENT_ID = '809913267973-sao47300qlpv3usb2gbt41vshlpkvjkj.apps.googleusercontent.com';
 
     // *** PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE (same one from index.js) ***
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyXNFSutaJXPgwuZrFXj3BC9ksdG_CQ7g8u2Ozkvzbs5p0Ay9STjBAMmLwjrEWpYkEE/exec';

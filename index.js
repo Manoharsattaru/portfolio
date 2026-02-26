@@ -269,8 +269,157 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
+    // === LEAD GEN FORM (DOCUMENTS) ===
+    let pendingDownloadUrl = '';
+
+    window.openLeadGenModal = (fileUrl) => {
+        pendingDownloadUrl = fileUrl; // Store the requested file URL
+        const modal = document.getElementById('leadGenModal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closeLeadGenModal = () => {
+        const modal = document.getElementById('leadGenModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        document.getElementById('leadGenForm').reset();
+        pendingDownloadUrl = '';
+    };
+
+    window.handleLeadGenSubmit = async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('leadName').value.trim();
+        const org = document.getElementById('leadOrg').value.trim();
+        const pos = document.getElementById('leadPos').value.trim();
+        const email = document.getElementById('leadEmail').value.trim();
+        const contact = document.getElementById('leadContact').value.trim();
+
+        const btn = document.getElementById('leadSubmitBtn');
+        const originalText = btn.textContent;
+
+        // Loading state
+        btn.innerHTML = '<span class="btn-spinner"></span> Submitting...';
+        btn.style.pointerEvents = 'none';
+        btn.classList.add('btn-loading');
+
+        try {
+            // Using the same Google Script App as the contact form, passing identifying subject
+            const subject = `Report Download Request: ${pendingDownloadUrl.split('/').pop()}`;
+            const message = `Organization: ${org}\nPosition: ${pos}\nContact: ${contact || 'N/A'}`;
+
+            if (GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, subject, message })
+                });
+            }
+
+            // Success: Trigger the physical download
+            showToast('Report is downloading! 📄', 'success');
+
+            const a = document.createElement('a');
+            a.href = pendingDownloadUrl;
+            a.download = pendingDownloadUrl.split('/').pop(); // Extract filename
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            closeLeadGenModal();
+
+        } catch (error) {
+            console.error('Lead form submission error:', error);
+            showToast('Error processing request. Please try again.', 'error');
+        } finally {
+            btn.innerHTML = originalText;
+            btn.style.pointerEvents = '';
+            btn.classList.remove('btn-loading');
+        }
+    };
+
+
+    // === DOCUMENT DROPDOWN TOGGLE ===
+    window.toggleDocDropdown = (headerElement) => {
+        const card = headerElement.closest('.doc-dropdown-card');
+        const body = card.querySelector('.doc-dropdown-body');
+
+        // Toggle expanded class
+        card.classList.toggle('expanded');
+
+        if (card.classList.contains('expanded')) {
+            body.style.maxHeight = body.scrollHeight + "px";
+        } else {
+            body.style.maxHeight = 0;
+        }
+    };
+
+    // === DOCUMENT FILTER ===
+    const filterBtns = document.querySelectorAll('.doc-filter-btn');
+    const docCards = document.querySelectorAll('.doc-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+
+            docCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // === PDF MODAL ===
+    window.openPdfModal = (src) => {
+        const modal = document.getElementById('pdfModal');
+        const frame = document.getElementById('pdfFrame');
+        frame.src = src;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closePdfModal = () => {
+        const modal = document.getElementById('pdfModal');
+        const frame = document.getElementById('pdfFrame');
+        modal.classList.remove('active');
+        frame.src = '';
+        document.body.style.overflow = '';
+    };
+
+    const pdfModal = document.getElementById('pdfModal');
+    if (pdfModal) {
+        pdfModal.addEventListener('click', (e) => {
+            if (e.target === pdfModal) window.closePdfModal();
+        });
+    }
+
+    const leadGenModal = document.getElementById('leadGenModal');
+    if (leadGenModal) {
+        leadGenModal.addEventListener('click', (e) => {
+            if (e.target === leadGenModal) window.closeLeadGenModal();
+        });
+    }
+
+    // Capture global escape key for any custom-modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const activeModal = document.querySelector('.custom-modal.active');
+            if (activeModal) {
+                if (activeModal.id === 'pdfModal') window.closePdfModal();
+                if (activeModal.id === 'leadGenModal') window.closeLeadGenModal();
+            }
+        }
+    });
+
     // === STAGGER REVEAL FOR GRIDS ===
-    const staggerContainers = document.querySelectorAll('.skills-container, .education-grid, .projects-grid, .certs-grid');
+    const staggerContainers = document.querySelectorAll('.skills-container, .education-grid, .projects-grid, .certs-grid, .doc-grid');
     staggerContainers.forEach(container => {
         const children = container.querySelectorAll('.reveal');
         children.forEach((child, index) => {
