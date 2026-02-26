@@ -427,4 +427,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // === PROFILE IMAGE CAROUSEL ===
+    const profileImg = document.getElementById('heroProfileImage');
+    if (profileImg) {
+        const images = ['profile.jpg', 'profile2.jpg', 'profile3.jpg'];
+        let currentIndex = 0;
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            // Smooth fade out
+            profileImg.style.opacity = '0';
+            setTimeout(() => {
+                profileImg.src = images[currentIndex];
+                // Smooth fade in
+                profileImg.style.opacity = '1';
+            }, 300);
+        }, 10000);
+    }
+
 });

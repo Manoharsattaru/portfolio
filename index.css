@@ -2542,6 +2542,10 @@ a.skill-tag-link:hover {
   justify-content: center;
 }
 
+#heroProfileImage {
+  transition: opacity 0.3s ease-in-out;
+}
+
 .opportunity-card {
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
