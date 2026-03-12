@@ -14,7 +14,7 @@ const ChatBot = (() => {
         name: "Sattaru Manohar",
         email: "Manoharansiddarth@gmail.com",
         phone: "+91 9542642876",
-        linkedin: "https://www.linkedin.com/in/sattarumanohar",
+        linkedin: "https://www.linkedin.com/in/sattaru-manohar-856590126/",
         github: "https://github.com/Manoharsattaru",
         credly: "https://www.credly.com/users/manohar-sattaru/badges",
         eportfolio: "https://eportfolio.mygreatlearning.com/manohar-sattaru",

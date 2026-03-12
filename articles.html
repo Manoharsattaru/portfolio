@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Articles and Insights by Sattaru Manohar — Perspectives on AI, Digital Transformation, and Governance.">
+  <title>Articles | Sattaru Manohar</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .article-container {
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+
+    .article-header {
+      margin-bottom: var(--space-2xl);
+      text-align: left;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+
+    .article-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: var(--transition-base);
+      display: grid;
+      grid-template-columns: 420px 1fr; /* Increased width for landscape images */
+      gap: 0;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color);
+      box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.2);
+    }
+
+    .article-card-image {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px; /* Minimal padding to stay clear of rounded corners */
+    }
+
+    .article-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Ensures full image is visible */
+      transition: transform 0.5s ease;
+    }
+
+    .article-card:hover .article-card-image img {
+      transform: scale(1.05);
+    }
+
+    .article-card-content {
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-md);
+    }
+
+    @media (max-width: 992px) {
+      .article-card {
+        grid-template-columns: 1fr;
+      }
+      .article-card-image {
+        height: 250px;
+        min-height: auto;
+      }
+    }
+
+    .article-card-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .article-card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .article-card-excerpt {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .article-card-link {
+      color: var(--primary-color);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .back-home {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--space-lg);
+    }
+
+    .back-home:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html#hero" class="nav-logo">Portfolio - S<span>M</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#education">Education</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#documents">Reports</a></li>
+        <li><a href="index.html#certifications">Certifications</a></li>
+        <li><a href="index.html#badges">Badges</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container article-container">
+    <a href="index.html" class="back-home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="19" y1="12" x2="5" y2="12" />
+        <polyline points="12 19 5 12 12 5" />
+      </svg>
+      Back to Portfolio
+    </a>
+
+    <header class="article-header">
+      <h1 class="section-title"><span class="gradient-text">Articles & Insights</span></h1>
+      <p class="section-subtitle">Perspectives on Artificial Intelligence, Digital Policy, and the future of Governance.</p>
+    </header>
+
+    <div class="article-grid">
+      <!-- Article Card 1 -->
+      <a href="https://www.linkedin.com/pulse/artificial-intelligence-its-mainframe-era-ai-early-where-manohar-nhyoc/?trackingId=720V563hBEbnwoj8GZIMnA%3D%3D" target="_blank" rel="noopener" class="article-card">
+        <div class="article-card-image">
+          <img src="data/articles/mainframe_era.png" alt="AI in its Mainframe Era">
+        </div>
+        <div class="article-card-content">
+          <div class="article-card-meta">
+            <span>LinkedIn Pulse</span>
+            <span>•</span>
+            <span>Artificial Intelligence</span>
+          </div>
+          <h2 class="article-card-title">Artificial Intelligence: It's the Mainframe Era of AI, but Early where...</h2>
+          <p class="article-card-excerpt">
+            Artificial Intelligence today appears infrastructure-heavy, capital-intensive, and complex. This is structurally similar to the early decades of computing, when only governments and large institutions could afford mainframe systems.
+          </p>
+          <div class="article-card-link">
+            Read Full Article
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <line x1="7" y1="17" x2="17" y2="7" />
+               <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Sattaru Manohar. Crafted with passion.</p>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Last Updated: 12/03/2026</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/sattaru-manohar-856590126/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Manoharsattaru" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:Manoharansiddarth@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
