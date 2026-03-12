@@ -180,6 +180,32 @@ const ChatBot = (() => {
                 toolsLearned: ["Python", "Flask", "LangChain", "Generative AI", "REST APIs", "IBM Cloud", "ChatGPT", "GitHub Copilot"]
             },
             {
+                name: "IBM Generative AI Engineering Professional Certificate",
+                platform: "Coursera",
+                url: "https://www.coursera.org/account/accomplishments/professional-cert/4OM97T86KN3V",
+                programUrl: "https://www.coursera.org/professional-certificates/ibm-generative-ai-engineering",
+                courses: [
+                    "Introduction to Artificial Intelligence (AI)",
+                    "Generative AI: Introduction and Applications",
+                    "Generative AI: Prompt Engineering Basics",
+                    "Python for Data Science, AI & Development",
+                    "Developing AI Applications with Python and Flask",
+                    "Building Generative AI-Powered Applications with Python",
+                    "Data Analysis with Python",
+                    "Machine Learning with Python",
+                    "Introduction to Deep Learning & Neural Networks with Keras",
+                    "Generative AI and LLMs: Architecture and Data Preparation",
+                    "Gen AI Foundational Models for NLP & Language Understanding",
+                    "Generative AI Language Modeling with Transformers",
+                    "Generative AI Engineering and Fine-Tuning Transformers",
+                    "Generative AI Advance Fine-Tuning for LLMs",
+                    "Fundamentals of AI Agents Using RAG and LangChain",
+                    "Project: Generative AI Applications with RAG and LangChain"
+                ],
+                skillsGained: ["Generative AI", "RAG", "LangChain", "Large Language Modeling", "Prompt Engineering", "Data Analysis"],
+                toolsLearned: ["Python", "Flask", "PyTorch", "Keras", "Hugging Face", "BERT/GPT"]
+            },
+            {
                 name: "Google AI Specialization",
                 platform: "Coursera",
                 url: "https://coursera.org/share/31d83aaae1b6e1fb43b07184b7b3edd8",
@@ -206,6 +232,30 @@ const ChatBot = (() => {
             "Led PMU for Ministry of Home Affairs — co-directing a 70-member consulting team",
             "Developed strategy for GIFMIS modernization based on platform engineering and IMF PFM guidelines",
             "Conducted market research and policy gap analysis for Medical Value Tourism, Rural Development, and Infrastructure sectors"
+        ],
+
+        badges: [
+            "Generative AI Applications Specialist",
+            "AI Agents Using RAG and LangChain",
+            "Generative AI Advanced Fine-Tuning for LLMs",
+            "Generative AI Engineering with Transformers & LLMs",
+            "Generative AI Language Modeling with Transformers",
+            "Google AI for App Building",
+            "Google AI for Content Creation",
+            "Google AI for Data Analysis",
+            "Google AI for Brainstorming and Planning",
+            "Google AI for Writing and Communicating",
+            "Google AI Fundamentals",
+            "Generative AI Foundational Models for NLP",
+            "Generative AI and LLMs: Architecture",
+            "Machine Learning with Python",
+            "Develop Generative AI Applications",
+            "Generative AI Essentials for Software Developers",
+            "Building Generative AI-Powered Applications",
+            "Python for Data Science and AI",
+            "Generative AI Essentials",
+            "Artificial Intelligence Essentials V2",
+            "Software Engineering Essentials"
         ]
     };
 
@@ -292,17 +342,25 @@ const ChatBot = (() => {
             }
         },
         {
-            keywords: ["certification", "certified", "certificate", "credly", "badge", "ibm ai", "google ai", "ibm developer", "coursera cert"],
+            keywords: ["certification", "certified", "certificate", "ibm ai", "google ai", "ibm developer", "coursera cert", "generative ai engineering"],
             response: () => {
-                const ibm = CV_DATA.certifications[0];
-                const google = CV_DATA.certifications[1];
-                return `Manohar's major certifications include:\n\n🎓 **${ibm.name}** — ${ibm.platform} ([View](${ibm.url}))\n🎓 **${google.name}** — ${google.platform} ([View](${google.url}))\n\nHe has also completed courses like Data Science A-Z and holds multiple badges. View all badges on [Credly](${CV_DATA.credly}).`;
+                const ibmDev = CV_DATA.certifications[0];
+                const ibmGenAI = CV_DATA.certifications[1];
+                const google = CV_DATA.certifications[2];
+                return `Manohar's major certifications include:\n\n🎓 **${ibmGenAI.name}** — ${ibmGenAI.platform} ([View](${ibmGenAI.url}))\n🎓 **${ibmDev.name}** — ${ibmDev.platform} ([View](${ibmDev.url}))\n🎓 **${google.name}** — ${google.platform} ([View](${google.url}))\n\nHe has also completed courses like Data Science A-Z. Ask about his **badges** for more details!`;
+            }
+        },
+        {
+            keywords: ["badge", "badges", "credly", "acclaim", "specialist"],
+            response: () => {
+                const badgeList = CV_DATA.badges.slice(0, 5).map(b => `• ${b}`).join('\n');
+                return `Manohar has earned **${CV_DATA.badges.length} professional badges** on Credly, primarily from IBM and Google via Coursera. Highlighted badges include:\n\n${badgeList}\n• ...and ${CV_DATA.badges.length - 5} more.\n\n🔗 [View All Badges on Credly](${CV_DATA.credly})`;
             }
         },
         {
             keywords: ["google", "google course", "google ai"],
             response: () => {
-                const google = CV_DATA.certifications[1];
+                const google = CV_DATA.certifications[2];
                 const courseList = google.courses.map((c, i) => `${i + 1}. ${c}`).join('\n');
                 return `Manohar holds the **${google.name}** from Google via Coursera — an extensive 7-course program focusing on AI fundamentals, communication, content creation, and app building:\n\n${courseList}\n\n**Skills Gained:** ${google.skillsGained.join(', ')}\n\n🔗 [View Certificate](${google.url})`;
             }
@@ -310,9 +368,13 @@ const ChatBot = (() => {
         {
             keywords: ["ibm", "ibm course", "ibm courses", "coursera"],
             response: () => {
-                const ibm = CV_DATA.certifications[0];
-                const courseList = ibm.courses.map((c, i) => `${i + 1}. ${c}`).join('\n');
-                return `Manohar holds the **${ibm.name}** from IBM via Coursera — a comprehensive 10-course professional program:\n\n${courseList}\n\n**Skills Gained:** ${ibm.skillsGained.join(', ')}\n**Tools Learned:** ${ibm.toolsLearned.join(', ')}\n\n🔗 [View Certificate](${ibm.url}) | [View Program](${ibm.programUrl})`;
+                const ibmDev = CV_DATA.certifications[0];
+                const ibmGenAI = CV_DATA.certifications[1];
+
+                const devList = ibmDev.courses.slice(0, 3).map(c => `• ${c}`).join('\n') + '\n• ...and 7 more courses';
+                const genAIList = ibmGenAI.courses.slice(0, 3).map(c => `• ${c}`).join('\n') + '\n• ...and 13 more courses';
+
+                return `Manohar holds two major professional certificates from **IBM** via Coursera:\n\n**1. ${ibmGenAI.name}**\n${genAIList}\n🔗 [View](${ibmGenAI.url})\n\n**2. ${ibmDev.name}**\n${devList}\n🔗 [View](${ibmDev.url})\n\nHe has gained skills like ${ibmGenAI.skillsGained.slice(0, 3).join(', ')}, ${ibmDev.skillsGained.slice(0, 3).join(', ')} and tools like ${ibmGenAI.toolsLearned.join(', ')}.`;
             }
         },
         {
