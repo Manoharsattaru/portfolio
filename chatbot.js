@@ -11,7 +11,7 @@ const ChatBot = (() => {
     // ============================
 
     const CV_DATA = {
-        name: "Sattaru Manohar",
+        name: "Sattaru Manohar, PMP®",
         email: "Manoharansiddarth@gmail.com",
         phone: "+91 9542642876",
         linkedin: "https://www.linkedin.com/in/sattaru-manohar-856590126/",
@@ -141,7 +141,7 @@ const ChatBot = (() => {
                     "Go Digit Predictive Modeling (EDA, Clustering, PCA, Predictive Modeling)",
                     "U.S.A Presidential Speech Analysis (Text Mining, NLP, Machine Learning)",
                     "Credit Risk Model for Indian Companies (Finance, Risk Analytics, ML)",
-                    "Credit Risk Default Model - Vote Prediction (Logistic Regression, CART, LDA, KNN)"
+                    "Vote Prediction (Logistic Regression, CART, LDA, KNN)"
                 ]
             },
             {
@@ -221,6 +221,13 @@ const ChatBot = (() => {
                 ],
                 skillsGained: ["AI Fluency", "Brainstorming", "Research", "Communication", "Content Creation", "Data Analysis", "App Building"],
                 toolsLearned: ["Google AI", "Gemini", "Vertex AI", "Prompt Engineering"]
+            },
+            {
+                name: "Project Management Professional (PMP)®",
+                platform: "Project Management Institute (PMI)",
+                url: "data/cv/Manohar Sattaru PMI Certification.pdf",
+                skillsGained: ["Project Management", "Agile Methodologies", "Risk Management", "Stakeholder Engagement", "Leadership"],
+                toolsLearned: []
             },
             { name: "Data Science A-Z: Hands-On Exercises", platform: "Udemy", url: "https://ude.my/UC-82df76bc-d935-4e60-96c4-07fa968028b8" }
         ],
