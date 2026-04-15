@@ -37,7 +37,7 @@ const ChatBot = (() => {
                 duration: "Oct 2024 – Present",
                 project: "Ministry of Finance",
                 highlights: [
-                    "Engineered NLP-based Internal Audit chatbot with hybrid lookup-LLM architecture using Flask, spaCy, and Ollama — achieving 90% accuracy",
+                    "Engineered Bharatkosh AI Assistance Chatbot with hybrid lookup-LLM architecture using Flask, spaCy, and Ollama — achieving 90% accuracy",
                     "Prepared POCs and documentation for AI/ML chatbots, fraud analytics, and OCR implementations in PFMS modules — Bharatkosh and E-Bill",
                     "Architected transition of 170+ SFTP/XML integrations to RESTful JSON APIs for RBI, banks, and payment gateways",
                     "Developed strategy for GIFMIS modernization based on platform engineering and IMF PFM guidelines"
@@ -140,7 +140,7 @@ const ChatBot = (() => {
                     "Statistical Data Analysis (Business Statistics, Hypothesis Testing, ANOVA)",
                     "Go Digit Predictive Modeling (EDA, Clustering, PCA, Predictive Modeling)",
                     "U.S.A Presidential Speech Analysis (Text Mining, NLP, Machine Learning)",
-                    "Credit Risk Model for Indian Companies (Finance, Risk Analytics, ML)",
+                    "Credit risk model (Finance, Risk Analytics, ML)",
                     "Vote Prediction (Logistic Regression, CART, LDA, KNN)"
                 ]
             },
@@ -233,7 +233,7 @@ const ChatBot = (() => {
         ],
 
         keyProjects: [
-            "Engineered NLP-based Internal Audit chatbot with hybrid lookup-LLM architecture (Flask, spaCy, Ollama) — achieving 90% accuracy",
+            "Engineered Bharatkosh AI Assistance Chatbot with hybrid lookup-LLM architecture (Flask, spaCy, Ollama) — achieving 90% accuracy",
             "Architected transition of 170+ SFTP/XML integrations to RESTful JSON APIs for RBI, banks, and payment gateways",
             "Developed OCR-based prototypes and data-processing pipelines, optimizing audit efficiency by 90%",
             "Led PMU for Ministry of Home Affairs — co-directing a 70-member consulting team",
@@ -349,12 +349,13 @@ const ChatBot = (() => {
             }
         },
         {
-            keywords: ["certification", "certified", "certificate", "ibm ai", "google ai", "ibm developer", "coursera cert", "generative ai engineering"],
+            keywords: ["certification", "certified", "certificate", "ibm ai", "google ai", "ibm developer", "coursera cert", "generative ai engineering", "pmp", "project management professional"],
             response: () => {
                 const ibmDev = CV_DATA.certifications[0];
                 const ibmGenAI = CV_DATA.certifications[1];
                 const google = CV_DATA.certifications[2];
-                return `Manohar's major certifications include:\n\n🎓 **${ibmGenAI.name}** — ${ibmGenAI.platform} ([View](${ibmGenAI.url}))\n🎓 **${ibmDev.name}** — ${ibmDev.platform} ([View](${ibmDev.url}))\n🎓 **${google.name}** — ${google.platform} ([View](${google.url}))\n\nHe has also completed courses like Data Science A-Z. Ask about his **badges** for more details!`;
+                const pmp = CV_DATA.certifications[3];
+                return `Manohar's major certifications include:\n\n🎓 **${pmp.name}** — ${pmp.platform} ([View](${pmp.url}))\n🎓 **${ibmGenAI.name}** — ${ibmGenAI.platform} ([View](${ibmGenAI.url}))\n🎓 **${ibmDev.name}** — ${ibmDev.platform} ([View](${ibmDev.url}))\n🎓 **${google.name}** — ${google.platform} ([View](${google.url}))\n\nHe has also completed courses like Data Science A-Z. Ask about his **badges** for more details!`;
             }
         },
         {
@@ -390,7 +391,7 @@ const ChatBot = (() => {
         },
         {
             keywords: ["chatbot", "nlp", "rag", "llm", "ai assistant", "audit"],
-            response: () => `At KPMG, Manohar engineered an **NLP-based Internal Audit Wing chatbot** using a hybrid RAG architecture:\n\n• **Stack:** Flask, spaCy, Ollama\n• **Architecture:** Hybrid lookup-LLM with direct rule extraction + vector similarity search\n• **Accuracy:** 100%\n• **Features:** REST API, embeddable widget, offline-capable, privacy-focused\n\nThis is a great example of his ability to build production-ready AI solutions!`
+            response: () => `At KPMG, Manohar engineered the **Bharatkosh AI Assistance Chatbot** using a hybrid RAG architecture:\n\n• **Stack:** Flask, spaCy, Ollama\n• **Architecture:** Hybrid lookup-LLM with direct rule extraction + vector similarity search\n• **Accuracy:** 90%\n• **Features:** REST API, embeddable widget, offline-capable, privacy-focused\n\nThis is a great example of his ability to build production-ready AI solutions!`
         },
         {
             keywords: ["api", "pfms", "integration", "rest", "migration"],
